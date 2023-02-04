@@ -1,0 +1,31 @@
+<html>
+<header>
+<title>my index page</title>
+</header>
+<body>
+<input id="email">
+<input id="pass">
+<button id="send">send</button>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+
+$("#send").click(function(){
+var details = {
+"residentPassword":$("#pass").val(),
+"residentEmail":  $("#email").val()
+}
+console.log( $("#email").val())
+$.ajax({
+url:"http://localhost:8090/login",
+type: "POST", 
+data:JSON.stringify(details),
+contentType: "application/json",
+success: function(data){
+console.log(data)
+}
+})
+})
+</script>
+</body>
+</html>

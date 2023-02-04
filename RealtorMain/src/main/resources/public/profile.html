@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>profile</title>
+</head>
+<body id= "body">
+
+<script type="text/javascript" src = "jquery.js"></script>
+<script type="text/javascript">
+window.addEventListener('load', function(){
+$.ajax({
+type:"GET",
+url:"http://localhost:8090/profile",
+dataType: "application/json",
+data: function(data){
+$("#body").append("<img alt='' src='' id='prof'>")
+$("#prof").attr("src", "/images/resident/ '+data.profilePath+' ");
+console.log(data)
+}
+})
+})
+</script>
+</body>
+</html>
